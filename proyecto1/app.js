@@ -16,7 +16,7 @@ window.addEventListener('load', ()=> {
         const emailValor = email.value.trim();
         const passValor = pass.value.trim();
         const passConfirmaValor = passConfirma.value.trim();
-     
+    
         //validando campo usuario
         //(!usuarioValor) ? console.log('CAMPO VACIO') : console.log(usuarioValor)
         if(!usuarioValor){
@@ -35,25 +35,25 @@ window.addEventListener('load', ()=> {
             validaOk(email)
         }
          //validando campo password
-         const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/          
-         if(!passValor) {
-             validaFalla(pass, 'Campo vacío')
-         } else if (passValor.length < 8) {             
-             validaFalla(pass, 'Debe tener 8 caracteres cómo mínimo.')
-         } else if (!passValor.match(er)) {
-             validaFalla(pass, 'Debe tener al menos una may., una min. y un núm.')
-         } else {
-             validaOk(pass)
-         }
+        const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/          
+        if(!passValor) {
+            validaFalla(pass, 'Campo vacío')
+        } else if (passValor.length < 8) {             
+            validaFalla(pass, 'Debe tener 8 caracteres cómo mínimo.')
+        } else if (!passValor.match(er)) {
+            validaFalla(pass, 'Debe tener al menos una may., una min. y un núm.')
+        } else {
+            validaOk(pass)
+        }
 
          //validando campo password Confirmación
-         if(!passConfirmaValor){
+        if(!passConfirmaValor){
             validaFalla(passConfirma, 'Confirme su password')
-         } else if(passValor !== passConfirmaValor) {
+        } else if(passValor !== passConfirmaValor) {
             validaFalla(passConfirma, 'La password no coincide')
-         } else {
+        } else {
             validaOk(passConfirma)
-         }
+        }
 
 
     }
